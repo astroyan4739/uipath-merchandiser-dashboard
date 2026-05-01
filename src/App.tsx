@@ -123,8 +123,8 @@ export default function App() {
                   background: 'var(--accent)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 13, fontWeight: 700, color: '#fff',
-                }}>M</div>
-                <span style={{ fontWeight: 600, fontSize: 14, color: 'var(--text)' }}>Merchant</span>
+                }}>D</div>
+                <span style={{ fontWeight: 600, fontSize: 14, color: 'var(--text)' }}>Dashboard</span>
               </div>
             </div>
           </div>
@@ -153,8 +153,8 @@ export default function App() {
                 background: 'var(--accent)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: 13, fontWeight: 700, color: '#fff',
-              }}>M</div>
-              <span style={{ fontWeight: 600, fontSize: 14, color: 'var(--text)' }}>Merchant</span>
+              }}>D</div>
+              <span style={{ fontWeight: 600, fontSize: 14, color: 'var(--text)' }}>Dashboard</span>
             </div>
 
             {/* Tabs */}
