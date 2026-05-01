@@ -320,7 +320,7 @@ export default function App() {
       </header>
 
       {/* Main content */}
-      <main style={{ maxWidth: 1400, margin: '0 auto', padding: '16px 40px 60px' }}>
+      <main style={{ maxWidth: 1400, margin: '0 auto', padding: '24px 40px 60px' }}>
 
         {activeTab === 'dashboard' && (
           <>
@@ -329,7 +329,7 @@ export default function App() {
             <div style={{
               display: 'grid',
               gridTemplateColumns: `repeat(${Math.min(visibleKpis.length, 4)}, 1fr)`,
-              gap: 12,
+              gap: 16,
               marginBottom: 24,
             }}>
               {kpisWithTargets.map(kpi => (

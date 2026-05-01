@@ -63,6 +63,7 @@ export function TrendChart({ current, metric }: Props) {
           axisLine={false}
           tickLine={false}
           width={50}
+          domain={['auto', 'auto']}
         />
         <Tooltip content={<CustomTooltip metric={metric} />} />
         <Line

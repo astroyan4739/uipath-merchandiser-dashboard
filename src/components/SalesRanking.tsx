@@ -143,6 +143,11 @@ export function SalesRanking({ products, metric, onExplore }: Props) {
 
       <div style={{ borderTop: '1px dashed var(--border)', marginBottom: 16 }} />
 
+      {metric === 'grossMargin' && (
+        <div style={{ marginBottom: 10, fontSize: 11, color: 'var(--text-subtle)', fontStyle: 'italic' }}>
+          Gross margin is uniform across all SKUs — cost is derived at 60% of price.
+        </div>
+      )}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         {displayed.map(p => (
           <div key={p.sku}>
