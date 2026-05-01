@@ -1,0 +1,105 @@
+{
+  "current": {
+    "period_id": "now",
+    "label": "Now",
+    "season_context": "AW25 · W7",
+    "display_date": "2025Q4",
+    "portfolio": {
+      "st": 45.9,
+      "margin": 50.1
+    },
+    "by_category": {
+      "Outerwear": { "st": 42.7, "margin": 48.1 },
+      "Knitwear":  { "st": 46.4, "margin": 49.4 },
+      "Denim":     { "st": 46.9, "margin": 49.2 },
+      "Accessories":{ "st": 46.4, "margin": 52.8 },
+      "Footwear":  { "st": 47.5, "margin": 52.6 }
+    }
+  },
+  "snapshots": [
+    {
+      "period_id": "7d",
+      "label": "7 days ago",
+      "season_context": "AW25 · W6",
+      "display_date": "2025Q3",
+      "portfolio": { "st": 39.3, "margin": 50.8 },
+      "by_category": {
+        "Outerwear":  { "st": 36.6, "margin": 49.1 },
+        "Knitwear":   { "st": 39.8, "margin": 50.2 },
+        "Denim":      { "st": 40.2, "margin": 50.0 },
+        "Accessories":{ "st": 39.8, "margin": 53.1 },
+        "Footwear":   { "st": 40.7, "margin": 52.9 }
+      }
+    },
+    {
+      "period_id": "30d",
+      "label": "30 days ago",
+      "season_context": "AW25 · W3",
+      "display_date": "Sep 2025",
+      "portfolio": { "st": 19.7, "margin": 52.9 },
+      "by_category": {
+        "Outerwear":  { "st": 18.3, "margin": 52.0 },
+        "Knitwear":   { "st": 19.9, "margin": 52.6 },
+        "Denim":      { "st": 20.1, "margin": 52.5 },
+        "Accessories":{ "st": 19.9, "margin": 54.1 },
+        "Footwear":   { "st": 20.4, "margin": 54.0 }
+      }
+    },
+    {
+      "period_id": "60d",
+      "label": "60 days ago",
+      "season_context": "AW25 · W1",
+      "display_date": "Aug 2025",
+      "portfolio": { "st": 6.6, "margin": 54.3 },
+      "by_category": {
+        "Outerwear":  { "st": 6.1, "margin": 54.0 },
+        "Knitwear":   { "st": 6.6, "margin": 54.2 },
+        "Denim":      { "st": 6.7, "margin": 54.2 },
+        "Accessories":{ "st": 6.6, "margin": 54.7 },
+        "Footwear":   { "st": 6.8, "margin": 54.7 }
+      }
+    },
+    {
+      "period_id": "90d",
+      "label": "90 days ago",
+      "season_context": "SS25 · W11 (clearance)",
+      "display_date": "Jul 2025",
+      "portfolio": { "st": 68.4, "margin": 38.2 },
+      "by_category": {
+        "Outerwear":  { "st": 52.1, "margin": 31.4 },
+        "Knitwear":   { "st": 61.8, "margin": 35.0 },
+        "Denim":      { "st": 74.2, "margin": 39.8 },
+        "Accessories":{ "st": 79.6, "margin": 42.7 },
+        "Footwear":   { "st": 82.3, "margin": 40.1 }
+      }
+    },
+    {
+      "period_id": "180d",
+      "label": "180 days ago",
+      "season_context": "SS25 · W7",
+      "display_date": "Apr 2025",
+      "portfolio": { "st": 43.1, "margin": 47.6 },
+      "by_category": {
+        "Outerwear":  { "st": 29.4, "margin": 44.8 },
+        "Knitwear":   { "st": 38.2, "margin": 46.5 },
+        "Denim":      { "st": 47.8, "margin": 48.2 },
+        "Accessories":{ "st": 54.1, "margin": 51.3 },
+        "Footwear":   { "st": 55.6, "margin": 50.9 }
+      }
+    },
+    {
+      "period_id": "LY",
+      "label": "Same season LY",
+      "season_context": "AW24 · W7",
+      "display_date": "Oct 2024",
+      "portfolio": { "st": 41.3, "margin": 52.4 },
+      "by_category": {
+        "Outerwear":  { "st": 38.9, "margin": 51.2 },
+        "Knitwear":   { "st": 40.6, "margin": 51.8 },
+        "Denim":      { "st": 43.1, "margin": 51.4 },
+        "Accessories":{ "st": 43.8, "margin": 54.6 },
+        "Footwear":   { "st": 44.2, "margin": 55.1 }
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+sku_id,product_name,category,season_week,total_season_weeks,weeks_remaining,opening_inventory,units_sold,units_on_hand,weekly_velocity,sell_through_pct,st_target_pct,st_gap,original_price,current_price,cost_price,gross_margin_pct,days_since_last_markdown,prior_markdown_taken,store_st_high,store_st_low,store_st_variance,weeks_of_supply,urgency_gap,urgency_label,ai_diagnosis,recommended_action,projected_st_lift_pct,projected_margin_impact_pts,notes
+OW-001,Puffer Jacket Black,Outerwear,7,12,5,120,94,26,13.0,78.3,58.0,20.3,189,189,85.05,55.0,0,False,88,72,16,2.0,-3.0,Reorder,On Track,Consider Reorder,0,0,"Strong velocity, near sellout"
+OW-002,Wool Overcoat Camel,Outerwear,7,12,5,80,22,58,3.2,27.5,58.0,-30.5,299,299,134.55,55.0,42,False,34,22,12,18.1,13.1,Critical,Wrong Price,Markdown 15%,14,-8,"No markdown in 42d, margin healthy"
+OW-003,Quilted Vest Navy,Outerwear,7,12,5,200,44,156,6.0,22.0,58.0,-36.0,129,129,58.05,55.0,7,False,68,8,60,26.0,21.0,Critical,Wrong Location,Redistribute,18,0,"68% ST in top stores, 8% in others"
+OW-004,Bomber Jacket Olive,Outerwear,7,12,5,95,81,14,11.5,85.3,58.0,27.3,159,95,71.55,24.7,14,True,91,79,12,1.2,-3.8,Reorder,Over-discounted,Hold / Learn,0,0,40% off taken too early
+OW-005,Puffer Vest Coral,Outerwear,7,12,5,110,26,84,3.7,23.6,58.0,-34.4,99,69,44.55,35.4,10,True,28,18,10,22.7,17.7,Critical,Wrong Product,Promote / Bundle,9,-4,"30% off, still not moving"
+OW-006,Trench Coat Beige,Outerwear,7,12,5,65,37,28,5.3,56.9,58.0,-1.1,249,249,112.05,55.0,0,False,63,51,12,5.3,0.3,OK,On Track,Wait,0,0,"1pt below target, no action needed"
+OW-007,Longline Coat Black,Outerwear,7,12,5,55,14,41,2.0,25.5,58.0,-32.5,349,349,157.05,55.0,56,False,30,20,10,20.5,15.5,Critical,Wrong Price,Markdown 15%,13,-8,"No markdown in 56d, high price point"
+OW-008,Sherpa Jacket Cream,Outerwear,7,12,5,140,35,105,5.0,25.0,58.0,-33.0,149,149,67.05,55.0,14,False,72,4,68,21.0,16.0,Critical,Wrong Location,Redistribute,20,0,72% ST vs 4% ST across doors
+OW-009,Windbreaker Navy,Outerwear,7,12,5,88,53,35,7.6,60.2,58.0,2.2,119,119,53.55,55.0,0,False,67,53,14,4.6,-0.4,OK,On Track,Wait,0,0,+2pts above target
+OW-010,Faux Leather Jacket Brown,Outerwear,7,12,5,75,17,58,2.4,22.7,58.0,-35.3,179,125,80.55,35.6,21,True,27,19,8,24.2,19.2,Critical,Wrong Product,Promote / Bundle,10,-4,"30% off, uniform low ST all doors"
+KN-001,Oversized Hoodie Grey,Knitwear,7,12,5,180,148,32,21.0,82.2,58.0,24.2,89,89,40.05,55.0,0,False,89,75,14,1.5,-3.5,Reorder,On Track,Consider Reorder,0,0,"Best performer, near sellout"
+KN-002,Ribbed Turtleneck Cream,Knitwear,7,12,5,95,29,66,4.1,30.5,58.0,-27.5,79,79,35.55,55.0,28,False,37,25,12,16.1,11.1,Critical,Wrong Price,Markdown 15%,14,-8,"28d no markdown, margin 55%"
+KN-003,Cropped Cardigan Pink,Knitwear,7,12,5,120,23,97,3.3,19.2,58.0,-38.8,69,49,31.05,36.6,18,True,23,15,8,29.4,24.4,Critical,Wrong Product,Bundle / Clear,8,-5,"29% off, no velocity response"
+KN-004,Crew Neck Sweater Charcoal,Knitwear,7,12,5,110,65,45,9.3,59.1,58.0,1.1,99,99,44.55,55.0,0,False,65,53,12,4.8,-0.2,OK,On Track,Wait,0,0,+1pt above target
+KN-005,V-Neck Pullover Burgundy,Knitwear,7,12,5,75,42,33,6.0,56.0,58.0,-2.0,85,85,38.25,55.0,0,False,61,51,10,5.5,0.5,OK,On Track,Wait,0,0,"-2pts below target, within range"
+KN-006,Chunky Knit Vest Oatmeal,Knitwear,7,12,5,130,32,98,4.6,24.6,58.0,-33.4,95,95,42.75,55.0,7,False,65,6,59,21.3,16.3,Critical,Wrong Location,Redistribute,19,0,65% vs 6% across doors
+KN-007,Ribbed Cardigan Ivory,Knitwear,7,12,5,100,88,12,12.6,88.0,58.0,30.0,89,53,40.05,24.4,21,True,93,83,10,1.0,-4.0,Reorder,Over-discounted,Hold / Learn,0,0,"40% off, near sellout but margin gone"
+KN-008,Mock Neck Sweater Forest,Knitwear,7,12,5,60,17,43,2.4,28.3,58.0,-29.7,109,109,49.05,55.0,35,False,33,23,10,17.9,12.9,Critical,Wrong Price,Markdown 15%,13,-8,35d no markdown
+KN-009,Cable Knit Hoodie Brown,Knitwear,7,12,5,85,51,34,7.3,60.0,58.0,2.0,115,115,51.75,55.0,0,False,66,54,12,4.7,-0.3,OK,On Track,Wait,0,0,+2pts above target
+KN-010,Striped Knit Top Navy,Knitwear,7,12,5,90,21,69,3.0,23.3,58.0,-34.7,65,46,29.25,36.4,24,True,27,18,9,23.0,18.0,Critical,Wrong Product,Bundle / Clear,9,-4,"29% off, uniform slow across doors"
+KN-011,Thermal Henley White,Knitwear,7,12,5,150,90,60,12.9,60.0,58.0,2.0,55,55,24.75,55.0,0,False,66,54,12,4.7,-0.3,OK,On Track,Wait,0,0,+2pts above target
+KN-012,Zip-Up Fleece Sage,Knitwear,7,12,5,105,27,78,3.9,25.7,58.0,-32.3,79,79,35.55,55.0,3,False,61,5,56,20.0,15.0,Critical,Wrong Location,Redistribute,17,0,61% vs 5% across doors
+DN-001,Mom Jeans Light Wash,Denim,7,12,5,200,150,50,21.4,75.0,58.0,17.0,89,89,40.05,55.0,0,False,82,68,14,2.3,-2.7,Reorder,On Track,Consider Reorder,0,0,Top denim performer
+DN-002,Slim Jeans Dark Wash,Denim,7,12,5,175,46,129,6.6,26.3,58.0,-31.7,95,95,42.75,55.0,3,False,71,7,64,19.5,14.5,Critical,Wrong Location,Redistribute,20,0,71% vs 7% across doors
+DN-003,Wide Leg Jeans Ecru,Denim,7,12,5,130,29,101,4.1,22.3,58.0,-35.7,99,69,44.55,35.4,14,True,26,17,9,24.6,19.6,Critical,Wrong Product,Bundle / Clear,8,-5,"30% off, no movement"
+DN-004,Straight Jeans Indigo,Denim,7,12,5,160,90,70,12.9,56.2,58.0,-1.8,89,89,40.05,55.0,0,False,62,50,12,5.4,0.4,OK,On Track,Wait,0,0,"-2pts below target, fine"
+DN-005,Boyfriend Jeans Mid Wash,Denim,7,12,5,90,25,65,3.6,27.8,58.0,-30.2,109,109,49.05,55.0,42,False,33,23,10,18.1,13.1,Critical,Wrong Price,Markdown 15%,14,-8,42d no markdown
+DN-006,Denim Mini Skirt Blue,Denim,7,12,5,85,51,34,7.3,60.0,58.0,2.0,69,69,31.05,55.0,0,False,66,54,12,4.7,-0.3,OK,On Track,Wait,0,0,+2pts above target
+DN-007,High Rise Flare Jeans Black,Denim,7,12,5,120,92,28,13.1,76.7,58.0,18.7,119,119,53.55,55.0,0,False,84,70,14,2.1,-2.9,Reorder,On Track,Consider Reorder,0,0,+19pts above target
+DN-008,Cargo Pants Khaki,Denim,7,12,5,95,22,73,3.1,23.2,58.0,-34.8,89,62,40.05,35.4,28,True,27,16,11,23.5,18.5,Critical,Wrong Product,Bundle / Clear,9,-4,"30% off, still flat"
+DN-009,Linen Blend Trouser Ecru,Denim,7,12,5,70,38,32,5.4,54.3,58.0,-3.7,75,75,33.75,55.0,0,False,59,49,10,5.9,0.9,OK,On Track,Wait,0,0,"-4pts below target, within range"
+DN-010,Denim Jacket Vintage Wash,Denim,7,12,5,80,70,10,10.0,87.5,58.0,29.5,129,77,58.05,24.6,21,True,92,84,8,1.0,-4.0,Reorder,Over-discounted,Hold / Learn,0,0,40% off taken too early
+DN-011,Wide Leg Trousers Black,Denim,7,12,5,110,28,82,4.0,25.5,58.0,-32.5,85,85,38.25,55.0,7,False,63,5,58,20.5,15.5,Critical,Wrong Location,Redistribute,18,0,63% vs 5% across doors
+DN-012,Pleated Midi Skirt Tan,Denim,7,12,5,65,18,47,2.6,27.7,58.0,-30.3,95,95,42.75,55.0,31,False,33,22,11,18.1,13.1,Critical,Wrong Price,Markdown 15%,13,-8,31d no markdown
+AC-001,Wool Scarf Plaid,Accessories,7,12,5,150,118,32,16.9,78.7,58.0,20.7,49,49,22.05,55.0,0,False,85,73,12,1.9,-3.1,Reorder,On Track,Consider Reorder,0,0,Near sellout
+AC-002,Leather Belt Brown,Accessories,7,12,5,100,25,75,3.6,25.0,58.0,-33.0,59,59,26.55,55.0,42,False,30,20,10,20.8,15.8,Critical,Wrong Price,Markdown 15%,14,-8,42d no markdown
+AC-003,Canvas Tote Natural,Accessories,7,12,5,120,73,47,10.4,60.8,58.0,2.8,39,39,17.55,55.0,0,False,67,55,12,4.5,-0.5,OK,On Track,Wait,0,0,+3pts above target
+AC-004,Bucket Hat Tan,Accessories,7,12,5,140,30,110,4.3,21.4,58.0,-36.6,35,35,15.75,55.0,3,False,66,4,62,25.6,20.6,Critical,Wrong Location,Redistribute,21,0,66% vs 4% across doors
+AC-005,Mini Crossbody Black,Accessories,7,12,5,80,62,18,8.9,77.5,58.0,19.5,79,79,35.55,55.0,0,False,84,72,12,2.0,-3.0,Reorder,On Track,Consider Reorder,0,0,+20pts above target
+AC-006,Beanie Ribbed Charcoal,Accessories,7,12,5,200,47,153,6.7,23.5,58.0,-34.5,25,18,11.25,37.5,21,True,29,19,10,22.8,17.8,Critical,Wrong Product,Bundle / Clear,8,-4,"28% off, uniform slow"
+AC-007,Silk Headband Floral,Accessories,7,12,5,90,23,67,3.3,25.6,58.0,-32.4,29,29,13.05,55.0,35,False,31,21,10,20.3,15.3,Critical,Wrong Price,Markdown 15%,13,-8,35d no markdown
+AC-008,Woven Straw Bag Natural,Accessories,7,12,5,60,35,25,5.0,58.3,58.0,0.3,65,65,29.25,55.0,0,False,64,52,12,5.0,0.0,OK,On Track,Wait,0,0,Exactly on target
+FW-001,Chelsea Boot Tan,Footwear,7,12,5,90,68,22,9.7,75.6,58.0,17.6,179,179,80.55,55.0,0,False,82,70,12,2.3,-2.7,Reorder,On Track,Consider Reorder,0,0,+18pts above target
+FW-002,Ankle Boot Black,Footwear,7,12,5,75,22,53,3.1,29.3,58.0,-28.7,199,199,89.55,55.0,30,False,35,23,12,17.1,12.1,Critical,Wrong Price,Markdown 15%,13,-8,"30d no markdown, high ASP"
+FW-003,Platform Sneaker White,Footwear,7,12,5,160,44,116,6.3,27.5,58.0,-30.5,129,129,58.05,55.0,7,False,69,7,62,18.4,13.4,Critical,Wrong Location,Redistribute,19,0,69% vs 7% across doors
+FW-004,Loafer Cognac,Footwear,7,12,5,70,42,28,6.0,60.0,58.0,2.0,149,149,67.05,55.0,0,False,66,54,12,4.7,-0.3,OK,On Track,Wait,0,0,+2pts above target
+FW-005,Running Sneaker Grey,Footwear,7,12,5,110,26,84,3.7,23.6,58.0,-34.4,119,83,53.55,35.5,21,True,28,18,10,22.7,17.7,Critical,Wrong Product,Bundle / Clear,9,-4,"30% off, no response"
+FW-006,Slide Sandal Tan,Footwear,7,12,5,130,78,52,11.1,60.0,58.0,2.0,59,59,26.55,55.0,0,False,66,54,12,4.7,-0.3,OK,On Track,Wait,0,0,+2pts above target
+FW-007,Heeled Mule Black,Footwear,7,12,5,55,15,40,2.1,27.3,58.0,-30.7,169,169,76.05,55.0,45,False,32,22,10,19.0,14.0,Critical,Wrong Price,Markdown 15%,14,-8,45d no markdown
+FW-008,Combat Boot Olive,Footwear,7,12,5,85,65,20,9.3,76.5,58.0,18.5,189,189,85.05,55.0,0,False,82,70,12,2.2,-2.8,Reorder,On Track,Consider Reorder,0,0,+18pts above target
