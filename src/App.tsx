@@ -199,7 +199,7 @@ export default function App() {
         {/* Page toolbar */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text)' }}>
-            {activeTab === 'dashboard' ? 'Dashboard' : 'AI Actions'}
+            {activeTab === 'dashboard' ? 'Dashboard' : ''}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             {/* Refresh indicator + frequency picker */}
