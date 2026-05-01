@@ -273,22 +273,24 @@ export default function App() {
 
               <div style={{ width: 1, height: 16, background: 'var(--border)' }} />
 
-              {/* Customize */}
-              <button
-                onClick={() => setShowCustomize(true)}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: 6,
-                  padding: '4px 8px',
-                  border: '1px solid var(--border)',
-                  borderRadius: 6,
-                  background: 'var(--surface)',
-                  fontSize: 11, fontWeight: 500,
-                  color: 'var(--text-muted)',
-                  cursor: 'pointer',
-                }}
-              >
-                Customize
-              </button>
+              {/* Customize — dashboard tab only */}
+              {activeTab === 'dashboard' && (
+                <button
+                  onClick={() => setShowCustomize(true)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 6,
+                    padding: '4px 8px',
+                    border: '1px solid var(--border)',
+                    borderRadius: 6,
+                    background: 'var(--surface)',
+                    fontSize: 11, fontWeight: 500,
+                    color: 'var(--text-muted)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Customize
+                </button>
+              )}
 
               {/* Schedule Report */}
               <button
