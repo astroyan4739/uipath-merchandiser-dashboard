@@ -189,137 +189,116 @@ export default function App() {
               ))}
             </nav>
 
+            {/* Spacer */}
+            <div style={{ flex: 1 }} />
+
+            {/* Right controls — dashboard tab only */}
+            {activeTab === 'dashboard' && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, color: 'var(--text-subtle)' }}>
+                    <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#22c55e' }} />
+                    Last refreshed: {fmtDatetime(simulatedRefresh)}
+                  </div>
+                  <div ref={refreshMenuRef} style={{ position: 'relative' }}>
+                    <button
+                      onClick={() => setShowRefreshMenu(v => !v)}
+                      style={{
+                        display: 'flex', alignItems: 'center', gap: 5,
+                        padding: '4px 8px', borderRadius: 6,
+                        border: '1px solid var(--border)',
+                        background: showRefreshMenu ? 'var(--accent-bg)' : 'var(--surface)',
+                        color: showRefreshMenu ? 'var(--accent)' : 'var(--text-muted)',
+                        fontSize: 11, fontWeight: 500, cursor: 'pointer',
+                      }}
+                    >
+                      <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
+                        <path d="M13.5 8A5.5 5.5 0 1 1 8 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                        <path d="M8 1v3.5L10 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      {FREQ_OPTIONS.find(o => o.key === refreshFreq)?.label}
+                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none">
+                        <path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                    {showRefreshMenu && (
+                      <div style={{
+                        position: 'absolute', top: 'calc(100% + 6px)', right: 0,
+                        background: 'var(--surface)', border: '1px solid var(--border)',
+                        borderRadius: 8, boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                        zIndex: 55, minWidth: 148, overflow: 'hidden',
+                      }}>
+                        {FREQ_OPTIONS.map((opt, i) => (
+                          <>
+                            {i === 1 && <div key="sep" style={{ height: 1, background: 'var(--border)', margin: '2px 0' }} />}
+                            <button
+                              key={opt.key}
+                              onClick={() => {
+                                if (opt.key === 'now') setSimulatedRefresh(new Date())
+                                else setRefreshFreq(opt.key)
+                                setShowRefreshMenu(false)
+                              }}
+                              style={{
+                                width: '100%', textAlign: 'left',
+                                padding: '8px 14px', border: 'none',
+                                background: (opt.key !== 'now' && opt.key === refreshFreq) ? 'var(--accent-bg)' : 'none',
+                                color: (opt.key !== 'now' && opt.key === refreshFreq) ? 'var(--accent)' : 'var(--text)',
+                                fontSize: 12, cursor: 'pointer',
+                                display: 'flex', alignItems: 'center', gap: 8,
+                              }}
+                              onMouseEnter={e => { if (opt.key !== refreshFreq) e.currentTarget.style.background = 'var(--bg)' }}
+                              onMouseLeave={e => { if (opt.key !== refreshFreq) e.currentTarget.style.background = 'none' }}
+                            >
+                              {opt.icon && (
+                                <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                                  <path d="M13.5 8A5.5 5.5 0 1 1 8 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                                  <path d="M8 1v3.5L10 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                              )}
+                              {opt.label}
+                            </button>
+                          </>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div style={{ width: 1, height: 16, background: 'var(--border)' }} />
+
+                <button
+                  onClick={() => setShowCustomize(true)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 6,
+                    padding: '4px 8px', border: '1px solid var(--border)',
+                    borderRadius: 6, background: 'var(--surface)',
+                    fontSize: 11, fontWeight: 500, color: 'var(--text-muted)', cursor: 'pointer',
+                  }}
+                >Customize</button>
+
+                <button
+                  onClick={() => setShowSchedule(true)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 6,
+                    padding: '4px 8px', border: '1px solid var(--border)',
+                    borderRadius: 6, background: 'var(--surface)',
+                    fontSize: 11, fontWeight: 500, color: 'var(--text-muted)', cursor: 'pointer',
+                  }}
+                >
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                    <rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M5 1v4M11 1v4M2 7h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                  Schedule Report
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </header>
 
       {/* Main content */}
       <main style={{ maxWidth: 1400, margin: '0 auto', padding: '24px 40px 60px' }}>
-
-        {/* Page toolbar — dashboard only */}
-        {activeTab === 'dashboard' && <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text)' }}>
-            {activeTab === 'dashboard' ? 'Dashboard' : ''}
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            {/* Refresh indicator + frequency picker */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, color: 'var(--text-subtle)' }}>
-                <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#22c55e' }} />
-                Last refreshed: {fmtDatetime(simulatedRefresh)}
-              </div>
-              <div ref={refreshMenuRef} style={{ position: 'relative' }}>
-                <button
-                  onClick={() => setShowRefreshMenu(v => !v)}
-                  style={{
-                    display: 'flex', alignItems: 'center', gap: 5,
-                    padding: '4px 8px', borderRadius: 6,
-                    border: '1px solid var(--border)',
-                    background: showRefreshMenu ? 'var(--accent-bg)' : 'var(--surface)',
-                    color: showRefreshMenu ? 'var(--accent)' : 'var(--text-muted)',
-                    fontSize: 11, fontWeight: 500, cursor: 'pointer',
-                  }}
-                >
-                  <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
-                    <path d="M13.5 8A5.5 5.5 0 1 1 8 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M8 1v3.5L10 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  {FREQ_OPTIONS.find(o => o.key === refreshFreq)?.label}
-                  <svg width="8" height="5" viewBox="0 0 8 5" fill="none">
-                    <path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-                {showRefreshMenu && (
-                  <div style={{
-                    position: 'absolute', top: 'calc(100% + 6px)', right: 0,
-                    background: 'var(--surface)', border: '1px solid var(--border)',
-                    borderRadius: 8, boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                    zIndex: 55, minWidth: 148, overflow: 'hidden',
-                  }}>
-                    {FREQ_OPTIONS.map((opt, i) => (
-                      <>
-                        {i === 1 && (
-                          <div key="sep" style={{ height: 1, background: 'var(--border)', margin: '2px 0' }} />
-                        )}
-                        <button
-                          key={opt.key}
-                          onClick={() => {
-                            if (opt.key === 'now') {
-                              setSimulatedRefresh(new Date())
-                            } else {
-                              setRefreshFreq(opt.key)
-                            }
-                            setShowRefreshMenu(false)
-                          }}
-                          style={{
-                            width: '100%', textAlign: 'left',
-                            padding: '8px 14px', border: 'none',
-                            background: (opt.key !== 'now' && opt.key === refreshFreq) ? 'var(--accent-bg)' : 'none',
-                            color: (opt.key !== 'now' && opt.key === refreshFreq) ? 'var(--accent)' : 'var(--text)',
-                            fontSize: 12, cursor: 'pointer',
-                            display: 'flex', alignItems: 'center', gap: 8,
-                          }}
-                          onMouseEnter={e => { if (opt.key !== refreshFreq) e.currentTarget.style.background = 'var(--bg)' }}
-                          onMouseLeave={e => { if (opt.key !== refreshFreq) e.currentTarget.style.background = 'none' }}
-                        >
-                          {opt.icon && (
-                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                              <path d="M13.5 8A5.5 5.5 0 1 1 8 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                              <path d="M8 1v3.5L10 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          )}
-                          {opt.label}
-                        </button>
-                      </>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <div style={{ width: 1, height: 16, background: 'var(--border)' }} />
-
-            {/* Customize — dashboard tab only */}
-            {activeTab === 'dashboard' && (
-              <button
-                onClick={() => setShowCustomize(true)}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: 6,
-                  padding: '4px 8px',
-                  border: '1px solid var(--border)',
-                  borderRadius: 6,
-                  background: 'var(--surface)',
-                  fontSize: 11, fontWeight: 500,
-                  color: 'var(--text-muted)',
-                  cursor: 'pointer',
-                }}
-              >
-                Customize
-              </button>
-            )}
-
-            {/* Schedule Report */}
-            <button
-              onClick={() => setShowSchedule(true)}
-              style={{
-                display: 'flex', alignItems: 'center', gap: 6,
-                padding: '4px 8px',
-                border: '1px solid var(--border)',
-                borderRadius: 6,
-                background: 'var(--surface)',
-                fontSize: 11, fontWeight: 500,
-                color: 'var(--text-muted)',
-                cursor: 'pointer',
-              }}
-            >
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                <rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
-                <path d="M5 1v4M11 1v4M2 7h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-              Schedule Report
-            </button>
-          </div>
-        </div>}
 
         {activeTab === 'dashboard' && (
           <>
