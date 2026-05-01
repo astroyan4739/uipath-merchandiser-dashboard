@@ -166,9 +166,9 @@ export default function App() {
                     display: 'flex', alignItems: 'center', gap: 5,
                     padding: '4px 10px', borderRadius: 4,
                     border: 'none',
-                    background: activeTab === id ? 'var(--surface)' : 'transparent',
+                    background: activeTab === id ? 'var(--accent)' : 'transparent',
                     boxShadow: activeTab === id ? 'var(--shadow-sm)' : 'none',
-                    color: activeTab === id ? 'var(--text)' : 'var(--text-muted)',
+                    color: activeTab === id ? '#fff' : 'var(--text-muted)',
                     fontSize: 11, fontWeight: activeTab === id ? 600 : 500,
                     cursor: 'pointer',
                     transition: 'all 0.15s',
@@ -179,8 +179,8 @@ export default function App() {
                   {id === 'action' && (
                     <span style={{
                       fontSize: 10, fontWeight: 600,
-                      background: activeTab === id ? 'var(--accent-bg)' : 'var(--border)',
-                      color: activeTab === id ? 'var(--accent)' : 'var(--text-muted)',
+                      background: activeTab === id ? 'rgba(255,255,255,0.25)' : 'var(--border)',
+                      color: activeTab === id ? '#fff' : 'var(--text-muted)',
                       padding: '1px 5px',
                       borderRadius: 4,
                     }}>1</span>
