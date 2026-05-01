@@ -11,7 +11,6 @@ import { DateRangePicker } from './components/DateRangePicker'
 import type { DateRange } from './components/DateRangePicker'
 import { ExplorePage } from './components/ExplorePage'
 import { SalesRanking } from './components/SalesRanking'
-import { Agentation } from 'agentation'
 
 type Tab = 'dashboard' | 'action'
 
@@ -553,7 +552,6 @@ export default function App() {
         </div>
       )}
 
-      <Agentation />
     </div>
   )
 }
