@@ -41,21 +41,29 @@ Always use these variables for colours, never hardcode greys. Hardcoded hex is a
 
 ### Key components
 
-**`KPICard`** — displays one KPI with delta badge, threshold progress bar, set/edit target inline input, info tooltip (opens downward), and a `···` more menu (Set target / Explore data).
+**`KPICard`** — displays one KPI with delta badge, threshold progress bar (height 4px, color-coded green ≥100% / amber ≥80% / red <80%), set/edit target inline input, info tooltip (opens downward), and a `···` more menu (Set target / Explore data). Period label `dataPeriodLabel` shown below metric name.
 
 **`ExplorePage`** — full-screen overlay driven by two props: `showChart` (boolean) and `title` (optional string). When `showChart=false` (KPI card explore), renders a hero card + sortable data table. When `showChart=true` (ranking card explore), renders a bar chart with top/bottom toggle + full product table.
 
-**`SalesRanking`** — renders one of three ranking bar charts (revenue / sellThrough / grossMargin). `onExplore(title: string)` callback passes the card title up to App so ExplorePage knows which chart to render.
+**`SalesRanking`** — renders one of three ranking bar charts (revenue / sellThrough / grossMargin). Bar colors: revenue `#60a5fa`, sellThrough `#7c3aed`, grossMargin `#1e3a5f`. All grossMargin values are uniform (40%) by data design — a note is shown to explain this. `onExplore(title: string)` callback passes the card title up to App so ExplorePage knows which chart to render.
 
-**`ActionTab`** — AI Actions tab. Contains a single `BundleCard` recommendation with a 4-step animated reasoning chain (`SignalDetail`, `PatternDetail`, `StrategyDetail`, `ImpactDetail`). Each step renders real data visualisations when expanded. Confidence level is hardcoded as "High confidence".
+**`ActionTab`** — AI Actions tab. Contains a single `BundleCard` recommendation with a 4-step reasoning chain. Each step (`SignalDetail`, `PatternDetail`, `StrategyDetail`, `ImpactDetail`) renders real data visualisations when expanded. Confidence is hardcoded as "High confidence" green pill. Adopt/Dismiss buttons are at card bottom, right-aligned. `THOUGHT_STEPS` is defined inside `BundleCard` (not at module level) so it has access to product data for JSX detail nodes.
 
-**`TrendChart`** — Recharts `ComposedChart` showing daily sales/orders as bars with a threshold line. Metric selector drives which KPI series is shown.
+**`TrendChart`** — Recharts `LineChart` with `domain={['auto', 'auto']}` on YAxis to auto-scale to data range (never starts at 0). Metric selector (Sales / Orders / Sell-Through / Margin) drives which `DailyPoint` field is plotted.
+
+### App header
+Brand name is "Dashboard" (D icon). Right side: last-refreshed datetime + frequency picker (manual / 30m / 1h / daily) — UI demo only, no backend. Customize button opens modal for adding/removing KPI metrics (2-column grid, info icon tooltip per KPI). Schedule Report button opens `ScheduleModal`.
+
+### Layout constants
+- Main content: `padding: 24px 40px 60px`, `maxWidth: 1400px`, `margin: 0 auto`
+- KPI grid: `gap: 16px`, `repeat(n, 1fr)` up to 4 columns
+- Ranking grid: `repeat(3, 1fr)`, `gap: 16px`
 
 ### Explore flow (App.tsx state)
 ```
 exploringKpi     — which KPI object to show in ExplorePage
-exploreShowChart — false = KPI hero card mode, true = bar chart mode  
+exploreShowChart — false = KPI hero card mode, true = bar chart mode
 exploreTitle     — overrides breadcrumb when coming from a SalesRanking card
 ```
-KPI card → `setExploreShowChart(false)`, `setExploreTitle(undefined)`  
+KPI card → `setExploreShowChart(false)`, `setExploreTitle(undefined)`
 Ranking card → `setExploreShowChart(true)`, `setExploreTitle(cardTitle)`
