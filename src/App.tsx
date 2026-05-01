@@ -196,8 +196,8 @@ export default function App() {
       {/* Main content */}
       <main style={{ maxWidth: 1400, margin: '0 auto', padding: '24px 40px 60px' }}>
 
-        {/* Page toolbar */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
+        {/* Page toolbar — dashboard only */}
+        {activeTab === 'dashboard' && <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text)' }}>
             {activeTab === 'dashboard' ? 'Dashboard' : ''}
           </div>
@@ -319,7 +319,7 @@ export default function App() {
               Schedule Report
             </button>
           </div>
-        </div>
+        </div>}
 
         {activeTab === 'dashboard' && (
           <>
