@@ -368,14 +368,14 @@ export function ExplorePage({ kpi, onClose, showChart, title }: Props) {
                     >i</button>
                     {showInfo && (
                       <div style={{
-                        position: 'absolute', top: 'calc(100% + 8px)', left: '50%',
-                        transform: 'translateX(-50%)', width: 260,
+                        position: 'absolute', top: 'calc(100% + 8px)', left: 0,
+                        width: 260,
                         background: '#1e1e2e', color: '#e2e8f0',
                         borderRadius: 8, padding: '12px 14px',
                         fontSize: 11, lineHeight: 1.6,
                         boxShadow: '0 8px 24px rgba(0,0,0,0.25)', zIndex: 60, pointerEvents: 'none',
                       }}>
-                        <div style={{ position: 'absolute', bottom: '100%', left: '50%', transform: 'translateX(-50%)', width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderBottom: '6px solid #1e1e2e' }} />
+                        <div style={{ position: 'absolute', bottom: '100%', left: 8, width: 0, height: 0, borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderBottom: '6px solid #1e1e2e' }} />
                         <div style={{ fontWeight: 600, color: '#fff', marginBottom: 4 }}>{kpi.label}</div>
                         <div style={{ marginBottom: 6 }}>{kpi.definition}</div>
                         <div style={{ color: '#94a3b8', fontFamily: 'monospace', fontSize: 10, marginBottom: 4 }}>{kpi.formula}</div>
