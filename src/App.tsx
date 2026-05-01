@@ -157,34 +157,28 @@ export default function App() {
             </div>
 
             {/* Tabs */}
-            <nav style={{ display: 'flex', alignItems: 'center', gap: 4, background: 'var(--bg)', borderRadius: 8, padding: '3px', height: 36 }}>
+            <nav style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
               {([['dashboard', 'Dashboard'], ['action', 'AI Actions']] as [Tab, string][]).map(([id, label]) => (
                 <button
                   key={id}
                   onClick={() => setActiveTab(id)}
                   style={{
-                    height: '100%',
-                    padding: '0 14px',
-                    border: 'none',
-                    borderRadius: 6,
-                    background: activeTab === id ? 'var(--surface)' : 'transparent',
-                    boxShadow: activeTab === id ? 'var(--shadow-sm)' : 'none',
+                    display: 'flex', alignItems: 'center', gap: 5,
+                    padding: '4px 8px', borderRadius: 6,
+                    border: '1px solid var(--border)',
+                    background: activeTab === id ? 'var(--accent-bg)' : 'var(--surface)',
+                    color: activeTab === id ? 'var(--accent)' : 'var(--text-muted)',
+                    fontSize: 11, fontWeight: activeTab === id ? 600 : 500,
                     cursor: 'pointer',
-                    fontSize: 13,
-                    fontWeight: activeTab === id ? 600 : 400,
-                    color: activeTab === id ? 'var(--text)' : 'var(--text-muted)',
                     transition: 'all 0.15s',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 6,
                   }}
                 >
                   {label}
                   {id === 'action' && (
                     <span style={{
                       fontSize: 10, fontWeight: 600,
-                      background: activeTab === id ? 'var(--accent-bg)' : 'var(--border)',
-                      color: activeTab === id ? 'var(--accent)' : 'var(--text-muted)',
+                      background: activeTab === id ? 'var(--accent)' : 'var(--border)',
+                      color: activeTab === id ? '#fff' : 'var(--text-muted)',
                       padding: '1px 5px',
                       borderRadius: 4,
                     }}>1</span>
