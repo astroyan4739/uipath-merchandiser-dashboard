@@ -21,9 +21,9 @@ export function ScheduleModal({ onClose }: Props) {
     { id: 'orders', label: 'Orders' },
     { id: 'sell_through', label: 'Sell-Through Rate' },
     { id: 'gross_margin', label: 'Gross Margin' },
+    { id: 'ai_actions', label: 'AI Business Actions' },
     { id: 'top_products', label: 'Top 5 Products' },
     { id: 'bottom_products', label: 'Bottom 5 Products' },
-    { id: 'ai_actions', label: 'AI Business Actions' },
   ]
 
   if (scheduled) {
