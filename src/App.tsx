@@ -360,11 +360,11 @@ export default function App() {
                       style={{
                         padding: '4px 10px',
                         borderRadius: 5,
-                        border: 'none',
+                        border: `1px solid ${selectedMetric === id ? 'var(--accent)' : 'transparent'}`,
                         fontSize: 11, fontWeight: 500,
                         cursor: 'pointer',
-                        background: selectedMetric === id ? 'var(--accent)' : 'var(--bg)',
-                        color: selectedMetric === id ? '#fff' : 'var(--text-muted)',
+                        background: selectedMetric === id ? 'var(--accent-bg)' : 'transparent',
+                        color: selectedMetric === id ? 'var(--accent)' : 'var(--text-muted)',
                       }}
                     >
                       {label}
