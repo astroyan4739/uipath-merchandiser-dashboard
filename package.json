@@ -13,6 +13,7 @@
     "@base-ui-components/react": "^1.0.0-rc.0",
     "@tailwindcss/vite": "^4.2.4",
     "@types/papaparse": "^5.5.2",
+    "@vercel/analytics": "^2.0.1",
     "agentation": "^3.0.2",
     "base-ui": "^0.0.294",
     "papaparse": "^5.5.3",
