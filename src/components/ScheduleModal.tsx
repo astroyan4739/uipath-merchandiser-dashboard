@@ -9,7 +9,7 @@ export function ScheduleModal({ onClose }: Props) {
   const [frequency, setFrequency] = useState('daily')
   const [time, setTime] = useState('08:00')
   const [timezone, setTimezone] = useState('Europe/London')
-  const [content, setContent] = useState<string[]>(['gross_sales', 'orders', 'sell_through', 'gross_margin'])
+  const [content, setContent] = useState<string[]>(['gross_sales', 'orders', 'sell_through', 'gross_margin', 'ai_actions'])
   const [scheduled, setScheduled] = useState(false)
 
   const toggleContent = (id: string) => {
@@ -23,6 +23,7 @@ export function ScheduleModal({ onClose }: Props) {
     { id: 'gross_margin', label: 'Gross Margin' },
     { id: 'top_products', label: 'Top 5 Products' },
     { id: 'bottom_products', label: 'Bottom 5 Products' },
+    { id: 'ai_actions', label: 'AI Business Actions' },
   ]
 
   if (scheduled) {
